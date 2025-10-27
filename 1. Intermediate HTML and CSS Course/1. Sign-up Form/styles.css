@@ -1,0 +1,251 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --error-red: #cc0000;
+    --focus-blue: #007bff;
+    --button-green: #596D48;
+    --input-color: #E5E7EB;
+}
+
+@font-face {
+    font-family: Norse-Bold;
+    src: url("Norse-Bold.otf") format("opentype");
+}
+
+/* Desktop Media */
+
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left side */
+
+.sidebar{
+    width: 40%;
+    flex-shrink: 0;
+    background-image: url(unsplash.jpg);
+    background-size: cover;
+    
+}
+
+.logo-container{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 0;
+    margin-top: 15vh;
+    text-align: center; 
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+
+    img{
+        width: 80px;
+        height: 110px;
+        margin-right: 10px;
+    }
+
+    span{
+        font-family: Norse-Bold;
+    }
+}
+
+.photo-credits{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    p{
+        margin-left: 270px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Right side */
+
+.form-area{
+    width: 60%;
+}
+
+.info-area{
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0px 430px 0px 40px;
+    margin-top: 80px;
+}
+
+/* Input form */
+
+.content-form{
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 0px 40px 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 5vw;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 3px;
+}
+
+.input-group input {
+    border: 1px solid var(--input-color);
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus{
+    border: 1px solid var(--focus-blue);
+}
+
+input:invalid {
+  border-color: var(--error-red);
+}
+
+input:valid {
+  border-color: var(--input-color);
+}
+
+/* Button & Link */
+
+.creation-button{
+    padding-left: 40px;
+    margin-top: 30px;
+
+    button{
+        background-color: var(--button-green);
+        color: white;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 400;
+        border-radius: 5px;
+        width: 230px;
+        height: 50px;
+        font-weight: bold;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    p{
+        font-size: 1.2rem;
+        font-weight: 400;
+
+        a{
+            color: var(--button-green);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover{
+            color: var(--button-green);
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Mobile Media */
+
+@media only screen and (max-width: 600px) {
+
+    .container{
+        display: grid;
+        min-height: 100vh;
+    }
+
+    /* Sidebar */
+  
+    .sidebar{
+        width: 100%;
+        height: 960px;
+        background-image: url(unsplash.jpg);
+        background-size: cover;   
+    }
+
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5rem;
+        font-weight: 700;
+        color: white;
+    }
+
+    .photo-credits{
+        color: white;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        p{
+            margin-left: 210px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    /* Form Side */
+
+    .form-area{
+        width: 95%;
+        margin-left: 5px;
+    }
+
+    .info-area{
+        padding: 0px;
+        margin-top: 50px;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    /* Input form */
+
+    .content-form{
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        text-align: center;
+
+        h2{
+            font-size: 1.3rem;
+        }
+    }
+
+    /* Button & Link */
+
+    .creation-button{
+
+        text-align: center;
+        padding-left: 0px;
+
+        button{
+            width: 190px;
+        }
+    }
+}
