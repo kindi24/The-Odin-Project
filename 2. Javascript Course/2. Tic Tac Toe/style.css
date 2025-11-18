@@ -1,0 +1,110 @@
+:root {
+    --body-background-color: #F4F4F9;
+    --game-info-background-color: #FFF;
+    --start-button-color: #4CAF50;
+    --start-button-hover-color: #45A049;
+    --message-color: #007BFF;
+    --cell-background-color: #EEE;
+    --cell-hover-background-color: #DDD;
+    --game-info-border-cell-not: #CCC;
+    --body-border-color: #333;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--body-background-color);
+    color: var(--body-border-color);
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#game-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--game-info-border-cell-not);
+    border-radius: 8px;
+    background-color: var(--game-info-background-color);
+    text-align: center;
+    min-width: 380px;
+}
+
+#player-form label, #player-form input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#player-form label {
+    font-weight: 700;
+}
+
+#player-form input {
+    width: 95%;
+    height: 30px;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+#start-button {
+    padding: 10px 20px;
+    background-color: var(--start-button-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#start-button:hover {
+    background-color: var(--start-button-hover-color);
+}
+
+#message {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: var(--message-color);
+}
+
+/* Πίνακας */
+#gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-top: 20px;
+    border: 5px solid var(--body-border-color);
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    background-color: var(--cell-background-color);
+    cursor: pointer;
+    border: 2px solid var(--body-border-color);
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: var(--cell-hover-background-color);
+}
+
+.cell:not(:empty) {
+    cursor: not-allowed;
+    background-color: var(--game-info-border-cell-not);
+}
+
+.hidden {
+    display: none !important;
+}
