@@ -1,0 +1,271 @@
+:root {
+    --body-background-color: #F4F4F9;
+    --header-project-list-btn-background-color: #007BFF;
+    --projects-sidebar-background-color: #F9F9F9;
+    --add-project-btn-background-color: #28A745;
+    --delete-project-btn-background-color: #E50000;
+    --save-btn-background-color: #3B82F6;
+    --cancel-btn-background-color: #F3F7FE;
+    --low-priority-color: #28A745;
+    --medium-priority-color: #FFC107;
+    --high-priority-color: #DC3545;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-background-color);
+    color: #333;
+}
+
+header {
+    background-color: var(--header-project-list-btn-background-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+#projects-sidebar {
+    width: 250px;
+    padding: 20px;
+    border-right: 1px solid #EEE;
+    background-color: var(--projects-sidebar-background-color);
+}
+
+#project-list button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+#project-list button:hover,
+#project-list button.active {
+    background-color: var(--header-project-list-btn-background-color);
+    color: white;
+    border-radius: 4px;
+}
+
+#add-project-btn,
+#add-todo-btn {
+    padding: 8px 15px;
+    background-color: var(--add-project-btn-background-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#delete-project-btn {
+    padding: 8px 15px;
+    background-color: var(--delete-project-btn-background-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#todo-display {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Todo Items */
+.todo-item {
+    border: 1px solid #CCC;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.todo-item.low { border-left: 5px solid var(--low-priority-color); }
+.todo-item.medium { border-left: 5px solid var(--medium-priority-color); }
+.todo-item.high { border-left: 5px solid var(--high-priority-color); }
+
+.todo-details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #EEE;
+    font-size: 0.9em;
+}
+
+#delete-btn {
+    cursor: pointer;
+    border-radius: 5px;
+    color: #FFF;
+    border-style: solid;
+    background-color: var(--delete-project-btn-background-color);
+    border-color: #FFF;
+    width: 90px;
+    height: 35px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Dialog Styling */
+dialog {
+    padding: 30px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    min-width: 25%;
+}
+
+#todo-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#todo-form input,
+#todo-form textarea,
+#todo-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.save {
+    background-color: var(--save-btn-background-color);
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+}
+
+.cancel {
+    background-color: var(--cancel-btn-background-color);
+    color: #3B82F6;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+}
+
+#close-details-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    background: #555;
+    border: none;
+    border-radius: 50px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+        margin: 0;
+        max-width: none;
+        box-shadow: none;
+    }
+
+    #projects-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #EEE;
+        padding-bottom: 10px;
+    }
+
+    #todo-display {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #todo-display h2 {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
+    #add-todo-btn,
+    #delete-project-btn {
+        margin-bottom: 10px;
+    }
+
+    dialog {
+        min-width: 90%;
+        max-width: 500px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 500px) {
+    header {
+        padding: 15px 10px;
+    }
+    
+    #projects-sidebar {
+        padding: 10px;
+    }
+
+    #todo-display #add-todo-btn, 
+    #todo-display #delete-project-btn {
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    #todo-display h2 {
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .todo-item {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .todo-item strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-actions {
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .save, .cancel, #close-details-btn {
+        width: 45%;
+        height: 40px;
+    }
+}
