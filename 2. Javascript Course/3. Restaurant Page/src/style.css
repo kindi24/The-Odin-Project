@@ -63,7 +63,8 @@ nav button:hover {
 
 /* Content */
 #content {
-    width: 100%;
+    max-width: 1200px;
+    width: 90%;
     margin: 40px auto;
     min-height: calc(100vh - 70px - 80px);
     background-color: rgba(51, 51, 51, 0.9);
@@ -162,4 +163,69 @@ nav button:hover {
 
 .info-item p {
     margin: 5px 0;
+}
+
+/* Media 1100px */
+@media (max-width: 1100px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Media 768px */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .site-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-around;
+        gap: 5px;
+    }
+
+    nav button {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 0 15px;
+    }
+}
+
+/* Media 569px */
+@media (max-width: 549px) {
+    #content {
+        width: 100%;
+        margin: 20px 0;
+        border-radius: 0;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .menu-card {
+        min-width: 450px;
+    }
+
+    .intro-text, .extra-text {
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
 }
