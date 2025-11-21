@@ -1,0 +1,165 @@
+:root {
+    --header-background-color: #333;
+    --site-title-color: #FFC107;
+    --nav-button-hover: #FFD207;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../assets/gyros-souvlaki.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 70px;
+    background-color: var(--header-background-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px;
+    height: 100%;
+}
+
+.site-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--site-title-color);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav button {
+    background-color: transparent;
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+nav button:hover {
+    background-color: var(--nav-button-hover);
+    color: #333;
+}
+
+/* Content */
+#content {
+    width: 100%;
+    margin: 40px auto;
+    min-height: calc(100vh - 70px - 80px);
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.home-section, .menu-section, .contact-section {
+    padding: 15px;
+    text-align: center;
+}
+
+.section-title {
+    color: var(--site-title-color);
+    font-size: 2.5em;
+}
+
+/* Home section */
+.intro-text, .extra-text {
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin: 15px auto;
+    max-width: 700px;
+}
+
+/* Menu section */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 25px;
+}
+
+.menu-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+            
+.menu-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+            
+.card-info {
+    padding: 15px;
+}
+            
+.item-name {
+    color: var(--site-title-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+            
+.item-description {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+            
+.item-value {
+    display: block;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: #FF7043;
+}
+
+/* Contact section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.info-item h3 {
+    color:  #FF7043;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.info-item p {
+    margin: 5px 0;
+}
