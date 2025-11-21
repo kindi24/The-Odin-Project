@@ -1,0 +1,232 @@
+:root {
+    --body-background-color: #AEEEE0;
+    --weather-card-h3: #003049;
+    --temp-main-color: #E63946;
+    --condition-color: #457B9D;
+}
+
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-background-color);
+    background: linear-gradient(113deg,rgba(174, 238, 224, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+/* Search content (input and radio buttons) */
+.search-bar {
+    display: grid;
+    grid-template-rows: 1fr;
+    height: 130px;
+    justify-content: center;
+    align-content: center;
+}
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 300px;
+}
+
+svg {
+    cursor: pointer;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(0, 48, 73, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+.radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}
+
+/* City Header */
+#city-header {
+    text-align: center;
+}
+
+/* Weather info content */
+#weather-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
+}
+
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+}
+
+.weather-card h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: var(--weather-card-h3);
+}
+
+.weather-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.weather-card .temp-main {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--temp-main-color);
+    margin: 10px 0;
+}
+
+.weather-card .condition {
+    font-style: italic;
+    color: var(--condition-color);
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        padding: 15px 10px;
+        align-items: flex-start;
+    }
+
+    .search-input-container {
+        width: 100%;
+        max-width: none;
+        order: 1;
+        margin-bottom: 10px;
+    }
+
+    .unit-controls {
+        margin: 5px 0 0 0;
+        order: 2;
+    }
+    
+    #weather-content {
+        padding: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 5px;
+    }
+
+    .unit-controls {
+        width: 100%;
+        justify-content: center; 
+        margin-top: 5px;
+    }
+
+    #weather-content {
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .weather-card h3 {
+        font-size: 1em;
+    }
+    
+    .weather-card p {
+        font-size: 0.85em;
+    }
+
+    .weather-card .temp-main {
+        font-size: 1.6em;
+    }
+    
+    .weather-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
