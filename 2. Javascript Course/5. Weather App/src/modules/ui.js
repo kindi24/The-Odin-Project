@@ -30,7 +30,7 @@ export function displayWeatherCards(data, city, isCelsius) {
             <div class="weather-card">
                 <h3>${dayName}</h3>
                 <p>${dateString}</p>
-                <img src="../../src/assets/${day.icon}.svg" class="weather-icon" alt="${day.icon}">
+                <img src="./assets/${day.icon}.svg" class="weather-icon" alt="${day.icon}">
                 <div class="temp-main">${tempMax}${tempUnit}</div>
                 <p>Min.: ${tempMin}${tempUnit}</p>
                 <p class="condition">${day.conditions}</p>
@@ -71,4 +71,5 @@ export function setupEventListeners(onSearch, onUnitChange) {
             onUnitChange(isCelsius);
         });
     });
+
 }
