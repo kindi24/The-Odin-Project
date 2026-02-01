@@ -1,42 +1,42 @@
     const menuItems = [
     {
         name: "Sandwich Gyros",
-        photo: "../../assets/gyros.png",
+        photo: "../assets/gyros.png",
         value: "3.50€"
     },
     {
         name: "Sandwich Souvlaki",
-        photo: "../../assets/souvlaki.png",
+        photo: "../assets/souvlaki.png",
         value: "3.20€"
     },
     {
         name: "Panseta portion",
-        photo: "../../assets/panseta.png",
+        photo: "../assets/panseta.png",
         value: "7.50€"
     },
     {
         name: "Mprizola portion",
-        photo: "../../assets/mprizola.png",
+        photo: "../assets/mprizola.png",
         value: "7.50€"
     },
     {
         name: "Club Gyros",
-        photo: "../../assets/club-gyros.png",
+        photo: "../assets/club-gyros.png",
         value: "8.50€"
     },
     {
         name: "Club Chicken Fillet",
-        photo: "../../assets/club-chicken-fillet.png",
+        photo: "../assets/club-chicken-fillet.png",
         value: "8.00€"
     },
     {
         name: "Deluxe Giga Burger",
-        photo: "../../assets/burger.png",
+        photo: "../assets/burger.png",
         value: "6.00€"
     },
     {
         name: "Kontosouvli (Pork or Chicken)",
-        photo: "../../assets/kontosouvli.png",
+        photo: "../assets/kontosouvli.png",
         value: "10.00€"
     }
 ];
@@ -66,3 +66,4 @@ export function menuContent() {
     `
 
 }
+
